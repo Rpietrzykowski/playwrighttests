@@ -11,9 +11,7 @@ Before(async function (this: ScenarioWorld, scenario) {
         }
     }
 
-    const ready = await this.init(contextOptions);
-
-    return ready;
+    return await this.init(contextOptions);
 });
 
 After(async function (this: ScenarioWorld, scenario) {
