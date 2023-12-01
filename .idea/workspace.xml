@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/e2e/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/cucumber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/env/common.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/run_test.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/run_test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/env/parseEnv.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/home-page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/reporter/cucumber-report.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +25,14 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -55,6 +75,12 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="257" />
     <option name="y" value="131" />
@@ -93,21 +119,85 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/cameronbradley/code/react-app",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Robert/Documents/projects/react-app/e2e/step-definitions/hooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.cucumber.cucumber_node_package_dir": "C:/Users/Robert/Documents/projects/react-app/e2e/src/node_modules/@cucumber/cucumber",
     "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "D:\\Nauka\\IntelliJ IDEA 2023.2.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions\hooks" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions\assertions" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e" />
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\features" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.cucumber-html-report.html">
+    <configuration name="cucumber-html-report.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/react-app/e2e/reports/cucumber-html-report.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber --profile dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber" />
+      </scripts>
+      <arguments value="--profile dev" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber --profile regression" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber" />
+      </scripts>
+      <arguments value="--profile regression" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber --profile smoke" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber" />
+      </scripts>
+      <arguments value="--profile smoke" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.cucumber-html-report.html" />
+      <item itemvalue="npm.cucumber --profile dev" />
+      <item itemvalue="npm.cucumber --profile smoke" />
+      <item itemvalue="npm.cucumber --profile regression" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.cucumber-html-report.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -121,6 +211,10 @@
       <option name="presentableId" value="Default" />
       <updated>1638155757223</updated>
       <workItem from="1699412249451" duration="22000" />
+      <workItem from="1701384475752" duration="1933000" />
+      <workItem from="1701386518284" duration="6046000" />
+      <workItem from="1701438080161" duration="5453000" />
+      <workItem from="1701443614989" duration="7819000" />
     </task>
     <servers />
   </component>
