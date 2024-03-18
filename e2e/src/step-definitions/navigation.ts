@@ -17,8 +17,6 @@ Given(
 
         console.log(`I am on the ${pageId} page`);
 
-
-
         await navigateToPage(page, pageId, globalConfig)
 
         await waitFor(() => currentPathMatchesPageId(page, pageId, globalConfig));
