@@ -5,14 +5,14 @@ import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
 
 Then(
-    /^the "([^"]*)" (?:radio button|check box) should( not)? be checked$/,
+    /^the "([^"]*)" (?:radio button|check box|switch) should( not)? be checked$/,
     async function (this: ScenarioWorld, elementKey: ElementKey, negate: boolean){
         const {
             screen: { page },
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} check box|radio button should ${negate?'not':''} be checked`)
+        console.log(`the ${elementKey} check box|radio|switch button should ${negate?'not':''} be checked`)
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
