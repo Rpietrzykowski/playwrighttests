@@ -1,6 +1,5 @@
 Feature: As a user I acn interact with buttons
 
-  @dev
   @smoke
   @regression
   Scenario: As a user I can interact and assert on buttons at index

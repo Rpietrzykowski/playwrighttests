@@ -3,7 +3,6 @@ import {waitFor} from "../../support/wait-for-behavior";
 import {ScenarioWorld} from "../setup/world";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
-import {wait} from "@testing-library/react";
 
 Then(
     /^the "([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd)" (?:tab|window) should( not)? contain the title "(.*)"$/,
