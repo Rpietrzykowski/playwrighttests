@@ -1,7 +1,6 @@
-import { Page } from 'playwright';
+import {Page} from 'playwright';
 import {ElementKey, ElementLocator} from "../env/global";
 import {Frame} from "@playwright/test";
-import {envNumber} from "../env/parseEnv";
 
 export const clickElement = async (
     page: Page,
@@ -88,4 +87,12 @@ export const inputValueOnPage = async (
 ): Promise<void> => {
     await pages[pageIndex].focus(elementIdentifier)
     await pages[pageIndex].fill(elementIdentifier, inputValue)
+}
+
+export const getAttributeText = async(
+    page: Page,
+    elementIdentifier: ElementLocator,
+    attribute: string,
+): Promise<string|null> => {
+    return page.locator(elementIdentifier).getAttribute(attribute);
 }
