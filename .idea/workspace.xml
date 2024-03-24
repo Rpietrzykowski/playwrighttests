@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/e2e/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/cucumber.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/env/common.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/run_test.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/run_test.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/env/parseEnv.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/home-page.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/reporter/cucumber-report.ts" afterDir="false" />
+    <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="Add storing the values in global variables and assert on them.">
+      <change afterPath="$PROJECT_DIR$/e2e/env/localhost.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/env/production.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/avatars.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/cards.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/drop-down-menus.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/page-refresh.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/select-boxes.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/config/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/config/hosts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/config/mappings/playground.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/config/mappings/playground.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/env/common.env" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/env/common.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/run_test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/run_test.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/run_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/run_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/features/playground/buttons.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/playground/buttons.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/support/navigation-behavior.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/support/navigation-behavior.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +87,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -123,25 +135,25 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Robert/Documents/projects/react-app/e2e/step-definitions/hooks",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Robert/Documents/projects/react-app/e2e/src/step-definitions/assertions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs.cucumber.cucumber_node_package_dir": "C:/Users/Robert/Documents/projects/react-app/e2e/src/node_modules/@cucumber/cucumber",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\Nauka\\IntelliJ IDEA 2023.2.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\Robert\\Documents\\projects\\react-app\\e2e\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src\step-definitions\assertions" />
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions\hooks" />
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions\assertions" />
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\step-definitions" />
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src" />
-      <recent name="C:\Users\Robert\Documents\projects\react-app\e2e" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src" />
@@ -150,54 +162,99 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.cucumber-html-report.html">
-    <configuration name="cucumber-html-report.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/react-app/e2e/reports/cucumber-html-report.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="cucumber --profile dev" type="js.build_tools.npm">
+  <component name="RunManager" selected="npm.cucumber local --profile regression">
+    <configuration name="cucumber local --profile dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/e2e/package.json" />
       <command value="run" />
       <scripts>
-        <script value="cucumber" />
+        <script value="cucumber:localhost" />
       </scripts>
       <arguments value="--profile dev" />
       <node-interpreter value="project" />
-      <envs />
+      <envs>
+        <env name="NODE_ENV" value="localhost" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
       <method v="2" />
     </configuration>
-    <configuration name="cucumber --profile regression" type="js.build_tools.npm">
+    <configuration name="cucumber local --profile regression" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/e2e/package.json" />
       <command value="run" />
       <scripts>
-        <script value="cucumber" />
+        <script value="cucumber:localhost" />
       </scripts>
       <arguments value="--profile regression" />
       <node-interpreter value="project" />
-      <envs />
+      <envs>
+        <env name="NODE_ENV" value="localhost" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
       <method v="2" />
     </configuration>
-    <configuration name="cucumber --profile smoke" type="js.build_tools.npm">
+    <configuration name="cucumber local --profile smoke" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/e2e/package.json" />
       <command value="run" />
       <scripts>
-        <script value="cucumber" />
+        <script value="cucumber:localhost" />
       </scripts>
       <arguments value="--profile smoke" />
       <node-interpreter value="project" />
-      <envs />
+      <envs>
+        <env name="NODE_ENV" value="localhost" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber prod --profile dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber:production" />
+      </scripts>
+      <arguments value="--profile dev" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="NODE_ENV" value="production" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber prod --profile regression" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber:production" />
+      </scripts>
+      <arguments value="--profile regression" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="NODE_ENV" value="production" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="cucumber prod --profile smoke" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber:production" />
+      </scripts>
+      <arguments value="--profile smoke" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="NODE_ENV" value="production" />
+        <env name="COMMON_CONFIG_FILE" value=".\env\common.env" />
+      </envs>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.cucumber-html-report.html" />
-      <item itemvalue="npm.cucumber --profile dev" />
-      <item itemvalue="npm.cucumber --profile smoke" />
-      <item itemvalue="npm.cucumber --profile regression" />
+      <item itemvalue="npm.cucumber local --profile dev" />
+      <item itemvalue="npm.cucumber prod --profile dev" />
+      <item itemvalue="npm.cucumber local --profile smoke" />
+      <item itemvalue="npm.cucumber prod --profile smoke" />
+      <item itemvalue="npm.cucumber local --profile regression" />
+      <item itemvalue="npm.cucumber prod --profile regression" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.cucumber-html-report.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -214,8 +271,106 @@
       <workItem from="1701384475752" duration="1933000" />
       <workItem from="1701386518284" duration="6046000" />
       <workItem from="1701438080161" duration="5453000" />
-      <workItem from="1701443614989" duration="7819000" />
+      <workItem from="1701443614989" duration="64894000" />
+      <workItem from="1702667133019" duration="3000" />
+      <workItem from="1710767102826" duration="421000" />
+      <workItem from="1710871957359" duration="6429000" />
+      <workItem from="1710967262105" duration="4233000" />
+      <workItem from="1711055770556" duration="4420000" />
+      <workItem from="1711127632789" duration="5753000" />
+      <workItem from="1711147788022" duration="1252000" />
+      <workItem from="1711225905390" duration="5697000" />
+      <workItem from="1711278961300" duration="3973000" />
     </task>
+    <task id="LOCAL-00001" summary="PoC of Playwright configuration project">
+      <option name="closed" value="true" />
+      <created>1701451921544</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701451921544</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Minor code analysis fixes">
+      <option name="closed" value="true" />
+      <created>1701452055101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701452055101</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add first e2e test">
+      <option name="closed" value="true" />
+      <created>1701632781249</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701632781249</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add first e2e test">
+      <option name="closed" value="true" />
+      <created>1701632792714</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701632792714</updated>
+    </task>
+    <task id="LOCAL-00005" summary="PoC of the react app playwright application">
+      <option name="closed" value="true" />
+      <created>1710767283222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710767283222</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add handling of the tabs and new windows.">
+      <option name="closed" value="true" />
+      <created>1710879897183</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710879897183</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add the way of handling the dynamic created data-id items by choosing nth dom element via the data id">
+      <option name="closed" value="true" />
+      <created>1711055898838</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711055898839</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add the way of handling the tables assertions">
+      <option name="closed" value="true" />
+      <created>1711060053334</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711060053334</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add the switches to be handled by automation">
+      <option name="closed" value="true" />
+      <created>1711060612786</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711060612786</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add handling the browser alerts + the alerts labels + tooltips and textareas.">
+      <option name="closed" value="true" />
+      <created>1711133115649</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711133115649</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add storing the values in global variables and assert on them.">
+      <option name="closed" value="true" />
+      <created>1711225950831</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711225950831</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -254,6 +409,41 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="PoC of Playwright configuration project" />
+    <MESSAGE value="Minor code analysis fixes" />
+    <MESSAGE value="Add first e2e test" />
+    <MESSAGE value="PoC of the react app playwright application" />
+    <MESSAGE value="Add handling of the tabs and new windows." />
+    <MESSAGE value="Add the way of handling the dynamic created data-id items by choosing nth dom element via the data id" />
+    <MESSAGE value="Add the way of handling the tables assertions" />
+    <MESSAGE value="Add the switches to be handled by automation" />
+    <MESSAGE value="Add handling the browser alerts + the alerts labels + tooltips and textareas." />
+    <MESSAGE value="Add storing the values in global variables and assert on them." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add storing the values in global variables and assert on them." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-iframe.ts</url>
+          <line>22</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-table-value.ts</url>
+          <line>9</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/e2e/src/index.ts</url>
+          <line>15</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
