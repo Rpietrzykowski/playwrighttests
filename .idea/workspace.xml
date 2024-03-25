@@ -4,27 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="Add storing the values in global variables and assert on them.">
-      <change afterPath="$PROJECT_DIR$/e2e/env/localhost.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/env/production.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/avatars.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/cards.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/drop-down-menus.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/page-refresh.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/select-boxes.feature" afterDir="false" />
+    <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="Add handling of enviroments + drop down menus + avatars + cards">
+      <change afterPath="$PROJECT_DIR$/e2e/config/emails.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/features/playground/login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/step-definitions/scroll.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/support/input-helper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/support/tag-helper.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/config/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/config/hosts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/config/mappings/playground.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/config/mappings/playground.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/env/common.env" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/env/common.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/run_test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/run_test.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/run_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/run_test.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/env/localhost.env" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/env/localhost.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/env/production.env" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/env/production.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/env/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/env/global.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/src/features/playground/buttons.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/playground/buttons.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/features/playground/iframe.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/playground/iframe.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/features/playground/inputs.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/playground/inputs.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/features/playground/text-areas.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/playground/text-areas.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/navigation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/support/navigation-behavior.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/support/navigation-behavior.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-iframe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-iframe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-table-value.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-table-value.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/iframe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/iframe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/setup/hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/setup/hooks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/support/html-behavior.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/support/html-behavior.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/support/wait-for-behavior.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/support/wait-for-behavior.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,24 +132,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Robert/Documents/projects/react-app/e2e/src/step-definitions/assertions",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.cucumber.cucumber_node_package_dir": "C:/Users/Robert/Documents/projects/react-app/e2e/src/node_modules/@cucumber/cucumber",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\Users\\Robert\\Documents\\projects\\react-app\\e2e\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Robert/Documents/projects/react-app/e2e/src/step-definitions/assertions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.cucumber.cucumber_node_package_dir&quot;: &quot;C:/Users/Robert/Documents/projects/react-app/e2e/src/node_modules/@cucumber/cucumber&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Robert\\Documents\\projects\\react-app\\e2e\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Robert\Documents\projects\react-app\e2e\src\step-definitions\assertions" />
@@ -162,7 +165,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.cucumber local --profile regression">
+  <component name="RunManager" selected="npm.cucumber local --profile dev">
     <configuration name="cucumber local --profile dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/e2e/package.json" />
       <command value="run" />
@@ -280,7 +283,9 @@
       <workItem from="1711127632789" duration="5753000" />
       <workItem from="1711147788022" duration="1252000" />
       <workItem from="1711225905390" duration="5697000" />
-      <workItem from="1711278961300" duration="3973000" />
+      <workItem from="1711278961300" duration="4384000" />
+      <workItem from="1711315761762" duration="2819000" />
+      <workItem from="1711397837428" duration="4822000" />
     </task>
     <task id="LOCAL-00001" summary="PoC of Playwright configuration project">
       <option name="closed" value="true" />
@@ -370,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711225950831</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add handling of enviroments + drop down menus + avatars + cards">
+      <option name="closed" value="true" />
+      <created>1711301905772</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711301905772</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -421,7 +434,8 @@
     <MESSAGE value="Add the switches to be handled by automation" />
     <MESSAGE value="Add handling the browser alerts + the alerts labels + tooltips and textareas." />
     <MESSAGE value="Add storing the values in global variables and assert on them." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add storing the values in global variables and assert on them." />
+    <MESSAGE value="Add handling of enviroments + drop down menus + avatars + cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add handling of enviroments + drop down menus + avatars + cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,17 +444,6 @@
           <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-iframe.ts</url>
           <line>22</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-table-value.ts</url>
-          <line>9</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/e2e/src/index.ts</url>
-          <line>15</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
