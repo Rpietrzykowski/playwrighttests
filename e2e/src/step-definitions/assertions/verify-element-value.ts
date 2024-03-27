@@ -4,6 +4,7 @@ import { getElementLocator } from "../../support/web-element-helper";
 import { ScenarioWorld } from "../setup/world";
 import { waitFor } from '..\\..\\support\\wait-for-behavior'
 import {getAttributeText, getValue} from "../../support/html-behavior";
+import {logger} from "../../../logger";
 
 Then(
     /^the "([^"]*)" should( not)? contain text "(.*)"$/,
@@ -13,7 +14,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} should ${negate?'not': ''} contain the text ${expectedElementText}`);
+        logger.log(`the ${elementKey} should ${negate?'not': ''} contain the text ${expectedElementText}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
@@ -32,7 +33,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} should ${negate?'not':''} equal the text ${expectedElementText}`);
+        logger.log(`the ${elementKey} should ${negate?'not':''} equal the text ${expectedElementText}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
 
@@ -51,7 +52,7 @@ Then (
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} should ${negate ? 'not' : ''} contains the value ${elementValue}`);
+        logger.log(`the ${elementKey} should ${negate ? 'not' : ''} contains the value ${elementValue}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
 
@@ -70,7 +71,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} should ${negate ? 'not' : ''} equal the value ${elementValue}`);
+        logger.log(`the ${elementKey} should ${negate ? 'not' : ''} equal the value ${elementValue}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
 
@@ -89,7 +90,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} should ${negate ? 'not' : ''} be enabled`);
+        logger.log(`the ${elementKey} should ${negate ? 'not' : ''} be enabled`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
 
@@ -108,7 +109,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementPosition} ${elementKey} should ${negate?'not':''}contain the text ${expectedElementText}`)
+        logger.log(`the ${elementPosition} ${elementKey} should ${negate?'not':''}contain the text ${expectedElementText}`)
 
         const pageIndex = Number(elementPosition.match(/\d/g)?.join('')) - 1
 
@@ -129,7 +130,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} ${attribute} should ${negate?'not':''}contain the text ${expectedElementText}`)
+        logger.log(`the ${elementKey} ${attribute} should ${negate?'not':''}contain the text ${expectedElementText}`)
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 

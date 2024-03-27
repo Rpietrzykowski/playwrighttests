@@ -4,6 +4,7 @@ import {ScenarioWorld} from "../setup/world";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
 import {getIframeElement} from "../../support/html-behavior";
+import {logger} from "../../../logger";
 
 Then(
     /^the "([^"]*)" on the "([^"]*)" iframe should( not)? be displayed$/,
@@ -13,7 +14,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} be displayed`)
+        logger.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} be displayed`)
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
         const iframeIdentifier = getElementLocator(page, iframeName, globalConfig)
@@ -34,7 +35,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} contain the text ${expectedElementText}`);
+        logger.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} contain the text ${expectedElementText}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
         const iframeIdentifier = getElementLocator(page, iframeName, globalConfig);
@@ -55,7 +56,7 @@ Then(
             globalConfig,
         } = this;
 
-        console.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} equal the text ${expectedElementText}`);
+        logger.log(`the ${elementKey} on the ${iframeName} iframe should ${negate ? 'not' : ''} equal the text ${expectedElementText}`);
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
         const iframeIdentifier = getElementLocator(page, iframeName, globalConfig);
