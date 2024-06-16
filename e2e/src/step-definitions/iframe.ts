@@ -1,6 +1,6 @@
 import { Then } from "@cucumber/cucumber"
 import { ScenarioWorld } from "./setup/world";
-import { waitFor } from "../support/wait-for-behavior";
+import {waitFor, waitForSelector} from "../support/wait-for-behavior";
 import { getElementLocator } from "../support/web-element-helper";
 import { ElementKey } from "../env/global";
 import {getIframeElement, inputValueOnIframe} from "../support/html-behavior";
@@ -21,15 +21,16 @@ Then(
 
         await waitFor(async () => {
             const elementIframe = await getIframeElement(page, iframeIdentifier)
-            const result = await page.waitForSelector(iframeIdentifier,
-                { state: 'visible'}
-            )
-            if (result){
+
+            const iframeStable = await waitForSelector(page, iframeIdentifier);
+
+            if (iframeStable){
+                const elementIframe = await getIframeElement(page, iframeIdentifier);
                 if (elementIframe){
                     await inputValueOnIframe(elementIframe, elementIdentifier, inputValue)
                 }
             }
-            return result;
+            return iframeStable;
         })
     }
 )
