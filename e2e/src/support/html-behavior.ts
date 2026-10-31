@@ -159,3 +159,17 @@ export const getElementTextAtIndex = async (
 ): Promise<string | null> => {
     return page.locator(elementIdentifier).nth(index).textContent()
 }
+
+export const elementEditable = async(
+    page: Page,
+    elementIdentifier: ElementLocator
+): Promise<boolean> => {
+    return page.locator(elementIdentifier).first().isEditable()
+}
+
+export const pressKey = async(
+    page: Page,
+    key: string
+): Promise<void> => {
+    await page.keyboard.press(key)
+}

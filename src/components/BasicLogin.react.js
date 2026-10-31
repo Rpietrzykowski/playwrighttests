@@ -89,6 +89,7 @@ export class BasicLogin extends React.Component {
             color="primary"
             variant="raised"
             type="submit"
+            disabled={this.state.disabled}
           >
             LOGIN
           </Button>
