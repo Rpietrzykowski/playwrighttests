@@ -13,5 +13,11 @@ export const getElementLocator = (
 
     const { pageElementMappings } = globalConfig;
 
-    return pageElementMappings[currentPage]?.[elementKey] || pageElementMappings.common?.[elementKey]
+    const elementLocator = pageElementMappings[currentPage]?.[elementKey] || pageElementMappings.common?.[elementKey]
+
+    if (!elementLocator) {
+        throw new Error(`No mapping for "${elementKey}" on page "${currentPage}" or in common`)
+    }
+
+    return elementLocator
 }

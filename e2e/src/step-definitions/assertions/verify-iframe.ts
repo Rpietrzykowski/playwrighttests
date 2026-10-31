@@ -3,7 +3,7 @@ import {waitFor} from "../../support/wait-for-behavior";
 import {ScenarioWorld} from "../setup/world";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
-import {getIframeElement} from "../../support/html-behavior";
+import {elementDisplayed, getElementText, getIframeElement} from "../../support/html-behavior";
 import {logger} from "../../../logger";
 
 Then(
@@ -21,7 +21,7 @@ Then(
 
         await waitFor(async () => {
             const elementIframe = await getIframeElement(page, iframeIdentifier)
-            const isElementVisible = (await elementIframe?.$(elementIdentifier)) != null;
+            const isElementVisible = !!elementIframe && await elementDisplayed(elementIframe, elementIdentifier);
             return isElementVisible === !negate;
         })
     }
@@ -42,7 +42,7 @@ Then(
 
         await waitFor(async () => {
             const elementIframe = await getIframeElement(page, iframeIdentifier);
-            const elementText = await elementIframe?.textContent(elementIdentifier);
+            const elementText = elementIframe && await getElementText(elementIframe, elementIdentifier);
             return elementText?.includes(expectedElementText) === !negate
         });
     }
@@ -63,7 +63,7 @@ Then(
 
         await waitFor(async () => {
             const elementIframe = await getIframeElement(page, iframeIdentifier);
-            const elementText = await elementIframe?.textContent(elementIdentifier);
+            const elementText = elementIframe && await getElementText(elementIframe, elementIdentifier);
             return (elementText === expectedElementText) === !negate
         });
     }

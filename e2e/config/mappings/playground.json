@@ -54,5 +54,10 @@
   "age":  "[name='age']",
   "email": "[data-id='email']",
   "password": "[data-id='password']",
-  "email error": "[data-id='email-error']"
+  "email error": "[data-id='email-error']",
+  "validation input": "[data-id='validation-input-two'] input",
+  "value one": "[data-id='value-one']",
+  "value two": "[data-id='value-two']",
+  "value three": "[data-id='value-three']",
+  "full name": "[data-id='full-name']"
 }

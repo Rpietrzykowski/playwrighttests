@@ -1,23 +1,40 @@
 import {ScenarioWorld} from "./setup/world";
-import {When} from "@cucumber/cucumber";
+import {Then, When} from "@cucumber/cucumber";
 import {logger} from "../../logger";
+import {waitFor} from "../support/wait-for-behavior";
 
 
 When (
-    /^I click (accept)?(dismiss)? on the alert dialog$/,
-    async function(this: ScenarioWorld, acceptDialog: boolean, dismissDialog: boolean){
+    /^I click (accept|dismiss) on the alert dialog$/,
+    async function(this: ScenarioWorld, dialogAction: string){
 
         const {
             screen: {page}
         } = this;
 
-        logger.log(`I click ${dismissDialog?'dismiss':'accept'} on the alert dialog`)
+        logger.log(`I click ${dialogAction} on the alert dialog`)
 
-        if(!!dismissDialog){
-            page.on('dialog', dialog => dialog.dismiss());
-        } else {
-            page.on('dialog', dialog => dialog.accept());
-        }
+        page.once('dialog', dialog => dialogAction === 'dismiss' ? dialog.dismiss() : dialog.accept());
 
+    }
+)
+
+Then(
+    /^the alert dialog should( not)? contain text "(.*)"$/,
+    async function(this: ScenarioWorld, negate: boolean, expectedDialogText: string){
+        const {
+            dialogMessages
+        } = this;
+
+        logger.log(`the alert dialog should ${negate?'not ':''}contain text ${expectedDialogText}`)
+
+        await waitFor(() => {
+            const lastDialogMessage = dialogMessages[dialogMessages.length - 1]
+            if (lastDialogMessage === undefined) return false;
+            return lastDialogMessage.includes(expectedDialogText) === !negate
+        })
+
+        // the next assertion must be satisfied by a new dialog, not by this one
+        dialogMessages.length = 0
     }
 )

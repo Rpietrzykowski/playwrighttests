@@ -2,7 +2,7 @@ import { Then } from "@cucumber/cucumber";
 import { ElementKey} from "../../env/global";
 import { getElementLocator } from "../../support/web-element-helper";
 import { ScenarioWorld } from "../setup/world";
-import { waitFor } from '..\\..\\support\\wait-for-behavior'
+import { waitFor } from '../../support/wait-for-behavior'
 import {
     elementEnabled,
     getAttributeText,
@@ -12,7 +12,6 @@ import {
 } from "../../support/html-behavior";
 import {logger} from "../../../logger";
 import {waitForSelector} from "../../support/wait-for-behavior";
-import {wait} from "@testing-library/react";
 
 Then(
     /^the "([^"]*)" should( not)? contain text "(.*)"$/,
@@ -27,12 +26,12 @@ Then(
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            const elementStable = await getElementText(page, elementIdentifier)
+            const elementStable = await waitForSelector(page, elementIdentifier)
             if (elementStable) {
-                const elementText = await page.textContent(elementIdentifier);
+                const elementText = await getElementText(page, elementIdentifier);
                 logger.debug("Element Text: ", elementText)
                 logger.debug("Expected Element Text: ", expectedElementText)
-                return elementText?.includes(expectedElementText) === !negate;
+                return (elementText ?? '').includes(expectedElementText) === !negate;
             } else {
                 return elementStable
             }

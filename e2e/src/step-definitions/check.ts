@@ -7,14 +7,14 @@ import {checkElement, uncheckElement} from "../support/html-behavior";
 import {logger} from "../../logger";
 
 Then(
-    /^I (check)?(uncheck)? the "([^"]*)" (?:radio button|check box|switch)$/,
-    async function(this: ScenarioWorld, checked: boolean, unchecked: boolean, elementKey: ElementKey) {
+    /^I (check|uncheck) the "([^"]*)" (?:radio button|check box|switch)$/,
+    async function(this: ScenarioWorld, checkAction: string, elementKey: ElementKey) {
         const {
             screen: { page },
             globalConfig,
         } = this;
 
-        logger.log(`I ${unchecked?'uncheck':'check'} the ${elementKey} check box|radio|switch button`)
+        logger.log(`I ${checkAction} the ${elementKey} check box|radio|switch button`)
 
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
@@ -22,7 +22,7 @@ Then(
             const elementStable = await waitForSelector(page, elementIdentifier);
 
             if (elementStable) {
-                if (unchecked){
+                if (checkAction === "uncheck"){
                     await uncheckElement(page, elementIdentifier)
                 } else {
                     await checkElement(page, elementIdentifier);

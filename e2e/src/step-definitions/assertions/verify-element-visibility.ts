@@ -2,8 +2,9 @@ import {Then} from "@cucumber/cucumber";
 import {ElementKey} from "../../env/global";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ScenarioWorld} from "../setup/world";
-import {waitFor} from '..\\..\\support\\wait-for-behavior'
+import {waitFor} from '../../support/wait-for-behavior'
 import {logger} from "../../../logger";
+import {elementDisplayed, elementDisplayedAtIndex, getDisplayedElementCount} from "../../support/html-behavior";
 
 Then(
     /^the "([^"]*)" should( not)? be displayed"$/,
@@ -18,7 +19,7 @@ Then(
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            const isElementVisible = (await page.$(elementIdentifier)) != null;
+            const isElementVisible = await elementDisplayed(page, elementIdentifier);
             return isElementVisible === !negate
         })
     }
@@ -38,14 +39,14 @@ Then(
         const index = Number(elementPosition.match(/\d/g)?.join('')) - 1
 
         await waitFor(async () => {
-            const isElementVisible = await page.$(`${elementIdentifier}>>nth=${index}`) != null
+            const isElementVisible = await elementDisplayedAtIndex(page, elementIdentifier, index)
             return isElementVisible === !negate
         })
     }
 )
 
 Then(
-    /^I should( not)? see "(\d*)" "([^"]*)" displayed$/,
+    /^I should( not)? see "(\d+)" "([^"]*)" displayed$/,
     async function(this: ScenarioWorld, negate:boolean, count: string, elementKey: ElementKey) {
         const {
             screen: { page },
@@ -57,8 +58,8 @@ Then(
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            const element = await page.$$(elementIdentifier)
-            return (Number(count) === element.length) === !negate
+            const elementCount = await getDisplayedElementCount(page, elementIdentifier)
+            return (Number(count) === elementCount) === !negate
         })
     }
 )

@@ -395,7 +395,7 @@ class App extends React.Component {
   };
 
   renderError = err => {
-    return <p>{err.toString()}</p>;
+    return <p data-id="contact-error-message">{err.toString()}</p>;
   };
 
   renderErrorState = () => {
@@ -434,7 +434,7 @@ class App extends React.Component {
   };
 
   onDeleteClick = (contact, history) => {
-    if (window.confirm('Are you sure you to remove this contact?')) {
+    if (window.confirm('Are you sure you want to remove this contact?')) {
       this.setState(prevState => {
         const index = prevState.contacts.findIndex(c => c.id === contact.id);
         if (index === -1) {

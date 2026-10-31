@@ -5,6 +5,7 @@ import { getElementLocator } from "../support/web-element-helper";
 import { ElementKey } from "../env/global";
 import {getIframeElement, inputValueOnIframe} from "../support/html-behavior";
 import {logger} from "../../logger";
+import {parseInput} from "../support/input-helper";
 
 Then(
     /^I fill in the "([^"]*)" input on the "([^"]*)" iframe with "([^"]*)"$/,
@@ -20,15 +21,14 @@ Then(
         const iframeIdentifier = getElementLocator(page, iframeName, globalConfig)
 
         await waitFor(async () => {
-            const elementIframe = await getIframeElement(page, iframeIdentifier)
-
             const iframeStable = await waitForSelector(page, iframeIdentifier);
 
             if (iframeStable){
                 const elementIframe = await getIframeElement(page, iframeIdentifier);
                 if (elementIframe){
-                    await inputValueOnIframe(elementIframe, elementIdentifier, inputValue)
+                    await inputValueOnIframe(elementIframe, elementIdentifier, parseInput(inputValue, globalConfig))
                 }
+                return !!elementIframe;
             }
             return iframeStable;
         })

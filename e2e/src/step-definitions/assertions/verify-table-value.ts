@@ -1,5 +1,6 @@
 import {DataTable, Then} from '@cucumber/cucumber'
-import {waitFor} from "../../support/wait-for-behavior";
+import {waitFor, waitForSelector} from "../../support/wait-for-behavior";
+import {getTableData} from "../../support/html-behavior";
 import {ScenarioWorld} from "../setup/world";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
@@ -18,12 +19,10 @@ Then(
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            const dataBefore = await page.$$eval(elementIdentifier+" tbody tr", (rows) => {
-                return rows.map(row => {
-                    const cells = row.querySelectorAll('td')
-                    return Array.from(cells).map(cell => cell.textContent)
-                })
-            })
+            const tableStable = await waitForSelector(page, elementIdentifier)
+            if (!tableStable) return false
+
+            const dataBefore = await getTableData(page, elementIdentifier)
             return JSON.stringify(dataBefore) === JSON.stringify(dataTable.raw()) === !negate
         })
 
