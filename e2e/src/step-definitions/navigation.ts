@@ -50,9 +50,7 @@ Given(
 
         await reloadPage(page);
 
-        await waitFor(() => currentPathMatchesPageId(page, pageId, globalConfig), {
-            timeout: 30000,
-        })
+        await waitFor(() => currentPathMatchesPageId(page, pageId, globalConfig))
 
 
     }

@@ -2,7 +2,7 @@ import { When } from '@cucumber/cucumber';
 import { ScenarioWorld } from "./setup/world";
 import {
     clickElement,
-} from '..\\support\\html-behavior';
+} from '../support/html-behavior';
 import {waitFor, waitForSelector} from "../support/wait-for-behavior";
 import { getElementLocator } from "../support/web-element-helper";
 import { ElementKey } from "../env/global";

@@ -4,6 +4,7 @@ import {ScenarioWorld} from "../setup/world";
 import {getElementLocator} from "../../support/web-element-helper";
 import {ElementKey} from "../../env/global";
 import {logger} from "../../../logger";
+import {elementDisplayed, getElementText} from "../../support/html-behavior";
 
 Then(
     /^the "([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd)" (?:tab|window) should( not)? contain the title "(.*)"$/,
@@ -16,11 +17,10 @@ Then(
 
         const pageIndex = Number(elementPosition.match(/\d/g)?.join('')) - 1
 
-        await page.waitForTimeout(1000)
-
         await waitFor(async () => {
-            let pages = context.pages();
-            const pageTitle = await pages[pageIndex].title()
+            const targetPage = context.pages()[pageIndex];
+            if (!targetPage) return false;
+            const pageTitle = await targetPage.title()
             return pageTitle?.includes(expectedTitle) === !negate
         })
     }
@@ -41,8 +41,9 @@ Then (
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            let pages = context.pages();
-            const isElementVisible = (await pages[pageIndex].$(elementIdentifier)) != null;
+            const targetPage = context.pages()[pageIndex];
+            if (!targetPage) return false;
+            const isElementVisible = await elementDisplayed(targetPage, elementIdentifier);
             return isElementVisible === !negate
         })
     }
@@ -63,8 +64,9 @@ Then (
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            let pages = context.pages();
-            const elementText = await pages[pageIndex].textContent(elementIdentifier);
+            const targetPage = context.pages()[pageIndex];
+            if (!targetPage) return false;
+            const elementText = await getElementText(targetPage, elementIdentifier);
             return elementText?.includes(expectedElementText) === !negate
         })
     }
@@ -85,8 +87,9 @@ Then (
         const elementIdentifier = getElementLocator(page, elementKey, globalConfig)
 
         await waitFor(async () => {
-            let pages = context.pages();
-            const elementText = await pages[pageIndex].textContent(elementIdentifier);
+            const targetPage = context.pages()[pageIndex];
+            if (!targetPage) return false;
+            const elementText = await getElementText(targetPage, elementIdentifier);
             return (elementText === expectedElementText) === !negate
         })
     }

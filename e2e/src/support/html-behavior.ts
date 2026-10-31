@@ -1,12 +1,11 @@
-import {Page} from 'playwright';
+import {Frame, Page} from 'playwright';
 import {ElementKey, ElementLocator} from "../env/global";
-import {Frame} from "@playwright/test";
 
 export const clickElement = async (
     page: Page,
     elementIdentifier: ElementLocator
 ): Promise<void> => {
-    await page.click(elementIdentifier);
+    await page.locator(elementIdentifier).first().click();
 }
 
 export const clickElementAtIndex = async (
@@ -14,8 +13,7 @@ export const clickElementAtIndex = async (
     elementIdentifier: ElementLocator,
     elementPosition: number
 ):Promise<void> => {
-    const element = await page.$(`${elementIdentifier}>>nth=${elementPosition}`)
-    await element?.click()
+    await page.locator(elementIdentifier).nth(elementPosition).click()
 }
 
 export const inputValue = async (
@@ -23,8 +21,9 @@ export const inputValue = async (
     elementIdentifier: ElementKey,
     input: string,
 ): Promise<void> => {
-    await page.focus(elementIdentifier);
-    await page.fill(elementIdentifier, input);
+    const element = page.locator(elementIdentifier).first();
+    await element.focus();
+    await element.fill(input);
 }
 
 export const selectValue = async (
@@ -32,43 +31,38 @@ export const selectValue = async (
     elementIdentifier: ElementLocator,
     option: string
 ): Promise<void> => {
-    await page.focus(elementIdentifier);
-    await page.selectOption(elementIdentifier, option);
+    const element = page.locator(elementIdentifier).first();
+    await element.focus();
+    await element.selectOption(option);
 }
 
 export const checkElement = async (
     page: Page,
     elementIdentifier: ElementLocator,
 ): Promise<void> => {
-    await page.check(elementIdentifier)
+    await page.locator(elementIdentifier).first().check()
 }
 
 export const uncheckElement = async (
     page: Page,
     elementIdentifier: ElementLocator,
 ): Promise<void> => {
-    await page.uncheck(elementIdentifier)
+    await page.locator(elementIdentifier).first().uncheck()
 }
 
 export const getValue = async (
     page: Page,
     elementIdentifier: ElementLocator,
 ): Promise<string | null> => {
-    await page.waitForSelector(elementIdentifier);
-    const value = await page.$eval<string, HTMLSelectElement>(elementIdentifier, el => {
-        return el.value;
-    })
-    return value
+    return page.locator(elementIdentifier).first().inputValue()
 }
 
 export const getIframeElement = async (
     page: Page,
     iframeIdentifier: ElementLocator
 ): Promise<Frame | null | undefined> => {
-    await page.waitForSelector(iframeIdentifier);
-    const elementHandle = await page.$(iframeIdentifier);
-    const elementIframe = await elementHandle?.contentFrame();
-    return elementIframe
+    const elementHandle = await page.locator(iframeIdentifier).first().elementHandle();
+    return elementHandle?.contentFrame()
 }
 
 export const inputValueOnIframe = async (
@@ -77,7 +71,7 @@ export const inputValueOnIframe = async (
     inputValue: string
 
 ): Promise<void> => {
-    await elementIframe.fill(elementIdenfifier, inputValue);
+    await elementIframe.locator(elementIdenfifier).first().fill(inputValue);
 }
 
 export const inputValueOnPage = async (
@@ -86,8 +80,9 @@ export const inputValueOnPage = async (
     elementIdentifier: ElementLocator,
     inputValue: string,
 ): Promise<void> => {
-    await pages[pageIndex].focus(elementIdentifier)
-    await pages[pageIndex].fill(elementIdentifier, inputValue)
+    const element = pages[pageIndex].locator(elementIdentifier).first();
+    await element.focus()
+    await element.fill(inputValue)
 }
 
 export const getAttributeText = async(
@@ -95,36 +90,66 @@ export const getAttributeText = async(
     elementIdentifier: ElementLocator,
     attribute: string,
 ): Promise<string|null> => {
-    return page.locator(elementIdentifier).getAttribute(attribute);
+    return page.locator(elementIdentifier).first().getAttribute(attribute);
 }
 
 export const scrollIntoView = async(
     page: Page,
     elementIdentifier: ElementLocator,
 ): Promise<void> => {
-    const element = page.locator(elementIdentifier);
-    await element.scrollIntoViewIfNeeded()
+    await page.locator(elementIdentifier).first().scrollIntoViewIfNeeded()
 }
 
 export const elementChecked = async(
     page: Page,
     elementIdentifier: ElementLocator
 ): Promise<boolean | null> => {
-    return await page.isChecked(elementIdentifier)
+    return page.locator(elementIdentifier).first().isChecked()
 }
 
 export const getElementText = async(
-    page: Page,
+    page: Page | Frame,
     elementIdentifier: ElementLocator
 ): Promise<string | null> => {
-    return await page.textContent(elementIdentifier)
+    return page.locator(elementIdentifier).first().textContent()
 }
 
 export const elementEnabled = async(
     page: Page,
     elementIdentifier: ElementLocator
 ): Promise<boolean | null> => {
-    return await page.isEnabled(elementIdentifier)
+    return page.locator(elementIdentifier).first().isEnabled()
+}
+
+export const elementDisplayed = async (
+    page: Page | Frame,
+    elementIdentifier: ElementLocator
+): Promise<boolean> => {
+    return (await page.locator(elementIdentifier).visible().count()) > 0
+}
+
+export const elementDisplayedAtIndex = async (
+    page: Page,
+    elementIdentifier: ElementLocator,
+    index: number
+): Promise<boolean> => {
+    return page.locator(elementIdentifier).nth(index).isVisible()
+}
+
+export const getDisplayedElementCount = async (
+    page: Page,
+    elementIdentifier: ElementLocator
+): Promise<number> => {
+    return page.locator(elementIdentifier).visible().count()
+}
+
+export const getTableData = async (
+    page: Page,
+    elementIdentifier: ElementLocator
+): Promise<string[][]> => {
+    return page.$$eval(`${elementIdentifier} tbody tr`, rows =>
+        rows.map(row => Array.from(row.querySelectorAll('td')).map(cell => cell.textContent?.trim() ?? ''))
+    )
 }
 
 export const getElementTextAtIndex = async (
@@ -132,5 +157,5 @@ export const getElementTextAtIndex = async (
     elementIdentifier: ElementLocator,
     index: number
 ): Promise<string | null> => {
-   return await page.textContent(`${elementIdentifier}>>nth=${index}`)
+    return page.locator(elementIdentifier).nth(index).textContent()
 }

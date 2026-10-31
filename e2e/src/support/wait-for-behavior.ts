@@ -12,15 +12,21 @@ export const waitFor = async <T>(
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
     const startDate = new Date();
 
+    let lastError: unknown;
+
     while (new Date().getTime() - startDate.getTime() < timeout) {
-        const result = await predicate();
-        if (result) return result;
+        try {
+            const result = await predicate();
+            if (result) return result;
+        } catch (e) {
+            lastError = e;
+        }
 
         await sleep (wait)
         logger.log (`Waiting ${wait} ms`);
     }
 
-    throw new Error(`Wait time of ${timeout} ms exceeded`);
+    throw new Error(`Wait time of ${timeout} ms exceeded${lastError ? `: ${lastError}` : ''}`);
 }
 
 export const waitForSelector = async (
@@ -28,10 +34,10 @@ export const waitForSelector = async (
     elementIdentifier: ElementLocator
 ): Promise<boolean> => {
     try {
-        await page.waitForSelector(elementIdentifier), {
+        await page.locator(elementIdentifier).first().waitFor({
             state: 'visible',
             timeout: envNumber('SELECTOR_TIMEOUT')
-        }
+        })
         return true;
     } catch (e) {
         return false;
@@ -45,10 +51,10 @@ export const waitForSelectorOnPage = async (
     pageIndex: number,
 ): Promise<boolean> => {
     try {
-        await pages[pageIndex].waitForSelector(elementIdentifier), {
+        await pages[pageIndex].locator(elementIdentifier).first().waitFor({
             state: 'visible',
             timeout: envNumber('SELECTOR_TIMEOUT')
-        }
+        })
         return true;
     } catch (e) {
         return false;

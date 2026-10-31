@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { env, getJsonFromFile } from '.\\env\\parseEnv';
+import { env, getJsonFromFile } from './env/parseEnv';
 import {
     GlobalConfig,
     HostsConfig,
@@ -12,7 +12,7 @@ import {generateCucumberRuntimeTag} from "./support/tag-helper";
 
 const environment = env('NODE_ENV')
 
-dotenv.config({ path: env('COMMON_CONFIG_FILE')});
+dotenv.config({ path: process.env.COMMON_CONFIG_FILE ?? 'env/common.env'});
 dotenv.config({ path: `${env('ENV_PATH')}${environment}.env`});
 
 const hostsConfig: HostsConfig = getJsonFromFile(env('HOSTS_URL_PATH'));
@@ -46,11 +46,11 @@ const worldParameters: GlobalConfig = {
     pageElementMappings,
 };
 
-const common = `.\\src\\features\\**\\ *.feature 
-                                          --require-module ts-node\\register 
-                                          --require .\\src\\step-definitions\\**\\**\\*.ts 
+const common = `./src/features/**/*.feature 
+                                          --require-module ts-node/register 
+                                          --require ./src/step-definitions/**/**/*.ts 
                                           --world-parameters ${JSON.stringify(worldParameters)} \
-                                          -f json:.\\reports\\report.json 
+                                          -f json:./reports/report.json 
                                           --format progress-bar \
                                           --parallel ${env('PARALLEL')} \
                                           --retry ${env('RETRY')}`;

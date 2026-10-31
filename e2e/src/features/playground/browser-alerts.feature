@@ -6,7 +6,9 @@ Feature: As a user I can interact with browser alerts
     Given I am on the "home" page
     And I click the "playground" button
     When I am directed to the "playground" page
+    And I click accept on the alert dialog
     And I click the "browser alert" button
-    Then I click accept on the alert dialog
-    And I click the "browser alert" button
+    And the alert dialog should contain text "Are you sure you wish to delete this item?"
     And I click dismiss on the alert dialog
+    And I click the "browser alert" button
+    Then the alert dialog should contain text "Are you sure you wish to delete this item?"
