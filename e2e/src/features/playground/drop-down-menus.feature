@@ -18,3 +18,16 @@ Feature: As a user I can interact with drop down menus
     And the "drop down profile" should not be displayed"
     And the "drop down my account" should not be displayed"
     And the "drop down logout" should not be displayed"
+
+  @regression
+  Scenario: As a user I can close the drop down menu with the Escape key
+    Given I am on the "home" page
+    And I click the "playground" button
+    When I am directed to the "playground" page
+    And I click the "drop down menu" button
+    And the "drop down profile" should be displayed"
+    And I press the "Escape" key
+    Then the "drop down profile" should not be displayed"
+    And the "drop down my account" should not be displayed"
+    And the "drop down logout" should not be displayed"
+    And the "drop down menu" should be displayed"

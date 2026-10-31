@@ -4,6 +4,7 @@ import { getElementLocator } from "../../support/web-element-helper";
 import { ScenarioWorld } from "../setup/world";
 import { waitFor } from '../../support/wait-for-behavior'
 import {
+    elementEditable,
     elementEnabled,
     getAttributeText,
     getElementText,
@@ -184,6 +185,57 @@ Then(
             if (elementStable) {
                 const attributeText = await getAttributeText(page, elementIdentifier, attribute);
                 return attributeText?.includes(expectedElementText) === !negate
+            } else {
+                return elementStable
+            }
+        })
+    }
+)
+
+Then(
+    /^the "([^"]*)" should( not)? be editable$/,
+    async function (this: ScenarioWorld, elementKey: ElementKey, negate: boolean) {
+        const {
+            screen: {page},
+            globalConfig,
+        } = this;
+
+        logger.log(`the ${elementKey} should ${negate ? 'not' : ''} be editable`);
+
+        const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
+
+        await waitFor( async () => {
+            const elementStable = await waitForSelector(page, elementIdentifier)
+
+            if (elementStable){
+                const isElementEditable = await elementEditable(page, elementIdentifier)
+                return isElementEditable === !negate
+            } else {
+                return elementStable
+            }
+        })
+    }
+)
+
+Then(
+    /^the "([^"]*)" should( not)? have the "([^"]*)" attribute$/,
+    async function (this: ScenarioWorld, elementKey: ElementKey, negate: boolean, attribute: string) {
+        const {
+            screen: {page},
+            globalConfig,
+        } = this;
+
+        logger.log(`the ${elementKey} should ${negate ? 'not' : ''} have the ${attribute} attribute`);
+
+        const elementIdentifier = getElementLocator(page, elementKey, globalConfig);
+
+        await waitFor( async () => {
+            const elementStable = await waitForSelector(page, elementIdentifier)
+
+            if (elementStable){
+                // boolean attributes render as "" so presence means !== null, not truthiness
+                const attributeValue = await getAttributeText(page, elementIdentifier, attribute)
+                return (attributeValue !== null) === !negate
             } else {
                 return elementStable
             }

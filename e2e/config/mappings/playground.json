@@ -59,5 +59,6 @@
   "value one": "[data-id='value-one']",
   "value two": "[data-id='value-two']",
   "value three": "[data-id='value-three']",
-  "full name": "[data-id='full-name']"
+  "full name": "[data-id='full-name']",
+  "login button": "[data-id='login-button']"
 }
